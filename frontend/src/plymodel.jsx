@@ -11,16 +11,17 @@ const PLYModel = ({ url }) => {
   // Automatically rotate the model
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.z += 0.01;
-     //meshRef.current.rotation.y += 0.01; 
-      //meshRef.current.rotation.x += 0.01;  // Adjust speed here
+      meshRef.current.rotation.z += .02;
+      meshRef.current.y = -20;
+     meshRef.current.rotation.y += 0.01; 
+    meshRef.current.rotation.x += 0.01;  // Adjust speed here
     }
   });
 
   return (
     <mesh ref={meshRef}>
       <primitive object={geometry} />
-      <meshStandardMaterial color="white" />
+      <meshStandardMaterial color="green" />
     </mesh>
   );
 };
